@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
 
 <head>
@@ -36,4 +36,65 @@
     </div>
 </body>
 
+</html> -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="scripts.js"></script>
+    <title>Coffee Is Life</title>
+</head>
+<body>
+    <div id="post_container">
+
+    </div>
+
+    <div class="post">
+        <div class="post_content">
+            <img src="" alt="">
+            <h1></h1>
+            <h2></h2>
+            <h3></h3>
+            <p></p>
+            <button onclick="update_post();">
+                Update Post
+            </button>
+
+            <button onclick="remove_post();">
+                Remove Post
+            </button>
+        </div>
+    </div>
+
+    <div id="add_new_post">
+        <h1>Add New Post</h1>
+        <label for="Post Title">
+            Post Title:
+        </label>
+        <input type="text" id="new_post_title" name="new_post_title">
+
+        <label for="Description">
+            Description:
+        </label>
+        <textarea id="new_post_description" name="new_post_description"></textarea><br>
+
+        <label for="Available Location">
+            Available Location:
+        </label>
+        <input type="text" id="new_post_available_location" name="new_post_available_location">
+
+        <label for="Image URL">
+            URL:
+        </label>
+        <input type="text" id="new_post_image_url" name="new_post_image_url">
+
+        <button onclick="add_post();">Submit</button>
+    </div>
+
+
+</body>
 </html>
