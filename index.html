@@ -46,14 +46,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script type="text/javascript" src="scripts.js"></script>
+    <link rel="stylesheet" href="style.css" />
     <title>Coffee Is Life</title>
 </head>
 <body>
+
+    <header class="sticky-header sticky-header-enable">
+        <nav class="nav-items">
+            <ul>
+                <li class="nav-item"><a href="#home-page-section">Home</a></li>
+                <li class="nav-item"><a href="#post-section">Posts</a></li>
+            </ul>
+        </nav>
+        <div class="page-title">
+            <h1>The Coffee House</h1>
+        </div>
+
+        <div class="search-box">
+            <p>search box will be here</p>
+        </div>
+    </header>
+
+    <div class="cover-page" id="cover-page-section">
+        <div class="introduce-container">
+            <h2>            
+                Coffee is Life
+            </h2>
+            <p>
+                The story of coffee start from here
+            </p>
+
+        </div>
+    </div>
+
     <div id="post_container">
 
     </div>
 
-    <div class="post">
+    <div class="post" style="display: none;">
         <div class="post_content">
             <img src="" alt="">
             <h1></h1>
@@ -70,7 +100,13 @@
         </div>
     </div>
 
-    <div id="add_new_post">
+    <div class="add-post-btn">
+        <button onclick="show_add_newpost_form();">
+            Add New Post
+        </button>
+    </div>
+        
+    <div id="add_new_post" style="display: none;">
         <h1>Add New Post</h1>
         <label for="Post Title">
             Post Title:
@@ -94,7 +130,6 @@
 
         <button onclick="add_post();">Submit</button>
     </div>
-
 
 </body>
 </html>
