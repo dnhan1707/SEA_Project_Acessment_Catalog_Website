@@ -1,44 +1,3 @@
-<!-- <!DOCTYPE html>
-<html>
-
-<head>
-    <title>LA TV Shows | Home</title>
-    <meta name="description" content="A Catalog of Shows Set in Los Angeles">
-    <link rel="stylesheet" href="style.css" />
-    <script type="text/javascript" src="scripts.js"></script>
-</head>
-
-<body>
-    <header class="main-header">
-        <h1 class="title">LA TV Shows</h1>
-    </header>
-    <div id="card-container">
-        
-    </div>
-    <div class="card" style="display: none;">
-        <div class="card-content">
-            <h2>TV Show Title</h2>
-            <img src="" alt="TV Show Poster">
-            <ul>
-                <li>Bullet Point 1</li>
-                <li>Bullet Point 2</li>
-                <li>Bullet Point 3</li>
-            </ul>
-        </div>
-    </div>
-    <div class="footer">
-        <button onclick="quoteAlert();">
-            Get A Quote!
-        </button>
-        <button onclick="removeLastCard();">
-            Remove A Card!
-        </button>
-    </div>
-</body>
-
-</html> -->
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -46,11 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script type="text/javascript" src="scripts.js"></script>
+
     <link rel="stylesheet" href="style.css" />
     <title>Coffee Is Life</title>
 </head>
 <body>
-
+    <!-- Header -->
     <header class="sticky-header sticky-header-enable">
         <nav class="nav-items">
             <ul>
@@ -67,6 +27,7 @@
         </div>
     </header>
 
+    <!-- Cover page -->
     <div class="cover-page" id="cover-page-section">
         <div class="introduce-container">
             <h2>            
@@ -79,56 +40,113 @@
         </div>
     </div>
 
-    <div id="post_container">
-
+    <!-- Collection -->
+    <div class="collection-title">
+        <h1>Product</h1>
+        <div class="rte"> </div>
     </div>
 
-    <div class="post" style="display: none;">
-        <div class="post_content">
-            <img src="" alt="">
-            <h1></h1>
-            <h2></h2>
-            <h3></h3>
-            <p></p>
-            <button onclick="update_post();">
-                Update Post
-            </button>
+    <div class="dropdown" style="float: left;">
+        <button class="dropbtn">Filter</button>
+        <div class="dropdown-content">
+            <div class="filter-option">
+                <div class="filter-availability">
+                    <h3>Availability</h3>
+                    <div class="availability-option">
+                        <input type="checkbox" id="instock-option" onclick="show_posts()"> In-Stock </input>
+                        <input type="checkbox" id="out-of-stock-option" onclick="show_posts()"> Out of Stock </input>
+                    </div>
+                </div>
 
-            <button onclick="remove_post();">
-                Remove Post
-            </button>
+                <div class="filter-price">
+                    <h3>Price</h3>
+                    <input type="checkbox" id="range-smaller-10" onclick="show_posts()" data-min="0" data-max="10"> &lt; 10$ </input>
+                    <input type="checkbox" id="range-10-to-20" onclick="show_posts()" data-min="10" data-max="20"> 10$ - 20$ </input>
+                    <input type="checkbox" id="range-20-to-30" onclick="show_posts()" data-min="20" data-max="30"> 20$ - 30$ </input>
+                    <input type="checkbox" id="range-larger-30" onclick="show_posts()" data-min="30" data-max="Infinity"> &gt; 30$ </input>
+                </div>
+                
+            </div>
         </div>
     </div>
 
-    <div class="add-post-btn">
-        <button onclick="show_add_newpost_form();">
-            Add New Post
-        </button>
+    <div class="dropdown" style="float: right;">
+        <button class="dropbtn">Sort</button>
+        <div class="dropdown-content">
+            <div class="sort-option">
+                <input type="checkbox" class="sort-check-box" id="sort-by-best-selling" onclick="sort_checked_box_change(this);"> Best Selling </input>
+                <input type="checkbox" class="sort-check-box" id="sort-by-price-low-to-high" onclick="sort_checked_box_change(this);"> Price, low to high </input>
+                <input type="checkbox" class="sort-check-box" id="sort-by-price-high-to-low" onclick="sort_checked_box_change(this);"> Price, high to low </input>
+                <input type="checkbox" class="sort-check-box" id="sort-by-alpha-A-Z" onclick="sort_checked_box_change(this);"> Sort By Alphabet A-Z </input>
+                <input type="checkbox" class="sort-check-box" id="sort-by-alpha-Z-A" onclick="sort_checked_box_change(this);"> Sort By Alphabet A-Z </input>
+                
+            </div>
+        </div>
     </div>
-        
+
+    <!-- Add posts here -->
+    <div id="post-container" class="grid-wrapper">
+
+    </div>
+
+    <!-- Templated post -->
+    <div class="post" style="display: none;">
+        <div class="post_content">
+            <img src="" alt="">
+            <div>
+                <h1></h1>
+                <h2></h2>
+                <h3></h3>
+                <p></p>
+                <button class="show-update-post-form-btn" onclick="show_update_post_form(this);">
+                    Update Post
+                </button>
+
+
+
+                <button onclick="remove_post(this);">
+                    Remove Post
+                </button>
+            </div>
+
+        </div>
+
+        <div id="update_post_form" style="display: none;">
+            <input type="text" id="update_title"> Title </input>
+            <input type="text" id="update_description"> Description </input>
+            <input type="text" id="update_rating"> Rating </input>
+            <input type="text" id="update_price"> Price </input>
+            <input type="text" id="update_url"> Image URL </input>
+            <div class="availability-in-add-post">
+                <h3>How is the availability?</h3>
+                <input type="checkbox" id="update-is-in-stock"> Available </input>
+            </div>
+    
+            <button class="submit-update-post" onclick="update(this)">Submit Changes</button>
+        </div>
+    </div>
+    
+    
+
+
+    <!-- Add new post -->
+    <div class="add-new-post-btn">
+        <button class="add-post" onclick="show_add_newpost_form();">Add new post</button>
+    </div>
+
+    <!-- New post form -->
     <div id="add_new_post" style="display: none;">
-        <h1>Add New Post</h1>
-        <label for="Post Title">
-            Post Title:
-        </label>
-        <input type="text" id="new_post_title" name="new_post_title">
+        <input type="text" id="title"> Title </input>
+        <input type="text" id="description"> Description </input>
+        <input type="text" id="rating"> Rating </input>
+        <input type="text" id="price"> Price </input>
+        <input type="text" id="url"> Image URL </input>
+        <div class="availability-in-add-post">
+            <h3>How is the availability?</h3>
+            <input type="checkbox" id="is-in-stock"> Available </input>
+        </div>
 
-        <label for="Description">
-            Description:
-        </label>
-        <textarea id="new_post_description" name="new_post_description"></textarea><br>
-
-        <label for="Available Location">
-            Available Location:
-        </label>
-        <input type="text" id="new_post_available_location" name="new_post_available_location">
-
-        <label for="Image URL">
-            URL:
-        </label>
-        <input type="text" id="new_post_image_url" name="new_post_image_url">
-
-        <button onclick="add_post();">Submit</button>
+        <button onclick="add_post()">Submit New Post</button>
     </div>
 
 </body>

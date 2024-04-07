@@ -1,0 +1,16 @@
+{
+  "name": "sea_project_acessment_catalog_website",
+  "version": "1.0.0",
+  "description": "This is the instructions, requirements, and starter for stage two of the Snap Engineering Academy application process.",
+  "main": "data.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "nodejs": "^0.0.0"
+  }
+}
