@@ -1,10 +1,4 @@
 
-// const FRESH_PRINCE_URL = "./img/coffee_1";
-// const CURB_POSTER_URL = "https://unsplash.com/fr/photos/une-personne-utilisant-un-telephone-cellulaire-sur-un-comptoir-hKPFjrNmoHU";
-// const EAST_LOS_HIGH_POSTER_URL = "https://static.wikia.nocookie.net/hulu/images/6/64/East_Los_High.jpg";
-
-
-
 //Data Set
 let coffee_data = [
     {
@@ -84,16 +78,15 @@ let coffee_data = [
 
 
 function show_posts(){
-
-    // }
-
     const post_container = document.getElementById("post-container");
     post_container.innerHTML = "";
     const templated_post = document.querySelector(".post");
-    let filtered_post = filter_by_search(coffee_data);
+
+    //Apply all kind of filter, if filter is not used, it return the original data
+    let filtered_post = filter_by_search(coffee_data);  
     filtered_post = apply_filters(filtered_post);
     filtered_post = apply_sort(filtered_post);
-    console.log("filtered post", filtered_post);
+    // console.log("filtered post", filtered_post);
 
     for(let i = 0; i < filtered_post.length; i++){
         let post_object = filtered_post[i];                     //get each post from the data
@@ -107,11 +100,12 @@ function show_posts(){
 
 //CRUD
 
-//Add new post
+//Show new post
 function show_add_newpost_form(){
     document.getElementById("add_new_post").style.display = "block";
 }
 
+//Edit the new post templated div
 function add_post(){
     const new_title = document.getElementById("title").value;
     const new_des = document.getElementById("description").value;
@@ -154,6 +148,8 @@ function remove_post(event)
 
 
 //Update
+
+//Put all the orginal info of that post into the update form
 function show_update_post_form(obj){
     disable_other_update_btn(obj);
     const post_id = obj.closest('.post').id;
@@ -169,6 +165,8 @@ function show_update_post_form(obj){
     
 }
 
+
+//Update the post  after submit the update form
 function update(obj){
     const post_id = obj.closest('.post').id;
     const post_to_update = document.getElementById(post_id)
@@ -312,6 +310,8 @@ function apply_filters(coffee_data) {
     return filtered_data;
 }
 
+
+//Searching
 function filter_by_search(coffee_data) {
     const input = get_input_from_search();
     if (!input) {

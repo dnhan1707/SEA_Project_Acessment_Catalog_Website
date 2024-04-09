@@ -1,27 +1,7 @@
 
-/* .cover-page{
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    padding-left: 10%;
-    background-color: rgb(67 45 30 / 70%);
-} */
-
 body{
-    /* background-image: url("../img/background.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    font-family: "Open Sans", sans-serif; */
     background-color: #FFF2D8;
 }
-
-body::before{
-
-}
-
-
 
 .introduce-container{
     max-width: 600px;
@@ -55,10 +35,6 @@ body::before{
     display: inline;
 }
 
-/* .nav-items{
-    background-color: blue;
-} */
-
 .page-title{
     margin: 0;
 }
@@ -76,17 +52,6 @@ body::before{
     width: max-content;
 }
 
-/* .search-wrapper{
-    display: flex;
-    grid-auto-flow: .25rem;
-} */
-
-/* #post-search-container{
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    /* gap: .25rem; */
-    /* margin-top: 1rem;
-} */ */
 
 .post-search{
     border: 1px solid black;
@@ -176,26 +141,18 @@ display: block;
     flex-direction: column;
 }
 
-/* #post-container{
-    display: flex;
-    width: 100%;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-} */
-
 
 #post-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between; /* Adjust alignment as needed */
+    justify-content: space-between; 
 }
 
 .post {
-    width: calc(33.33% - 20px); /* Adjust width of each post */
-    margin-bottom: 20px; /* Add some bottom margin between posts */
-    box-sizing: border-box; /* Include padding and border in the element's total width and height */
-    border: 1px solid #ccc; /* Add border for each post */
+    width: calc(33.33% - 20px);
+    margin-bottom: 20px;
+    box-sizing: border-box; 
+    border: 1px solid #ccc; 
     background-color: #EAD7BB;
     border-radius: 3%;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -207,7 +164,7 @@ display: block;
 }
 
 .post_content {
-    padding: 20px; /* Add padding for post content */
+    padding: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -223,16 +180,16 @@ display: block;
 }
 
 .img-container {
-    margin-bottom: 10px; /* Add some bottom margin for image container */
+    margin-bottom: 10px;
 }
 
 img {
-    max-width: 100%; /* Ensure images don't exceed their container width */
+    max-width: 100%; 
     height: 400px;
 }
 
 h1, h3, p {
-    margin: 5px 0; /* Add some margin for text elements */
+    margin: 5px 0; 
 }
 
 .post-content > h3{
@@ -241,24 +198,61 @@ h1, h3, p {
 }
 
 button {
-    margin-top: 10px; /* Add some top margin for buttons */
+    margin-top: 10px; 
 }
 
-/* Initially hide the buttons */
 .show-update-post-form-btn,
 .remove-btn,
 .coffee-des {
     display: none;
 }
 
-/* Show the buttons when the post is being hovered */
 .post:hover .show-update-post-form-btn,
 .post:hover .remove-btn,
 .post:hover .coffee-des {
-    display: inline-block; /* Or any other display property you prefer */
+    display: inline-block;
 }
 
+#update_post_form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Add some space between elements */
+    max-width: 300px; /* Adjust as needed */
+    margin: 0 auto; /* Center the form horizontally */
+}
 
+#update_post_form label {
+    font-weight: bold;
+}
+
+#update_post_form input[type="text"], #update_post_form input[type="checkbox"] {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+}
+
+#update_post_form .availability-in-add-post {
+    display: flex;
+    align-items: center;
+}
+
+#update_post_form .availability-in-add-post h3 {
+    margin-right: 10px;
+}
+
+#update_post_form .submit-update-post {
+    padding: 10px 20px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#update_post_form .submit-update-post:hover {
+    background-color: #0056b3;
+}
 #add_new_post {
     display: none;
     max-width: 400px;
