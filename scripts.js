@@ -220,7 +220,7 @@ function edit_post_content(edited_post, post_object, index){
     // post_availability.textContent = post_object.in_stock;
 
     const post_price = edited_post.querySelector("p");
-    post_price.textContent = post_object.price + "$";
+    post_price.textContent = "Price: " + post_object.price + "$";
 
     const post_image = edited_post.querySelector("img");
     post_image.src = post_object.url;

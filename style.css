@@ -1,5 +1,5 @@
 
-.cover-page{
+/* .cover-page{
     width: 100%;
     height: 100vh;
     display: flex;
@@ -7,13 +7,14 @@
     align-items: center;
     padding-left: 10%;
     background-color: rgb(67 45 30 / 70%);
-}
+} */
 
 body{
-    background-image: url("../img/background.jpg");
+    /* background-image: url("../img/background.jpg");
     background-size: cover;
     background-repeat: no-repeat;
-    font-family: "Open Sans", sans-serif;
+    font-family: "Open Sans", sans-serif; */
+    background-color: #FFF2D8;
 }
 
 body::before{
@@ -39,7 +40,7 @@ body::before{
     justify-content: center;
     /* gap: 200px; */
     color: white;
-    background-color: #1A120B;
+    background-color: #113946;
     padding-block: 25px;
     z-index: 1;
 }
@@ -195,7 +196,7 @@ display: block;
     margin-bottom: 20px; /* Add some bottom margin between posts */
     box-sizing: border-box; /* Include padding and border in the element's total width and height */
     border: 1px solid #ccc; /* Add border for each post */
-    background-color: #F4DFBA;
+    background-color: #EAD7BB;
     border-radius: 3%;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 
@@ -208,7 +209,16 @@ display: block;
 .post_content {
     padding: 20px; /* Add padding for post content */
     display: flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
+
+}
+
+.post-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
 }
 
@@ -218,6 +228,7 @@ display: block;
 
 img {
     max-width: 100%; /* Ensure images don't exceed their container width */
+    height: 400px;
 }
 
 h1, h3, p {
@@ -235,15 +246,18 @@ button {
 
 /* Initially hide the buttons */
 .show-update-post-form-btn,
-.remove-btn {
+.remove-btn,
+.coffee-des {
     display: none;
 }
 
 /* Show the buttons when the post is being hovered */
 .post:hover .show-update-post-form-btn,
-.post:hover .remove-btn {
+.post:hover .remove-btn,
+.post:hover .coffee-des {
     display: inline-block; /* Or any other display property you prefer */
 }
+
 
 #add_new_post {
     display: none;
@@ -295,4 +309,5 @@ button {
 #add_new_post button:hover {
     background-color: #1A120B;
 }
+
 
